@@ -11,45 +11,103 @@
         <ITEM value="111"/>
     </ALPHABET>
     <OUTPUTALPHABET>
-        <ITEM value="B"/>
-        <ITEM value="B (r)"/>
-        <ITEM value="D"/>
-        <ITEM value="D (h)"/>
-        <ITEM value="D (r)"/>
-        <ITEM value="E"/>
-        <ITEM value="E (h)"/>
+        <ITEM value="B (h)\n"/>
+        <ITEM value="B (r)\n"/>
+        <ITEM value="B\n"/>
+        <ITEM value="D (h)\n"/>
+        <ITEM value="D\n"/>
+        <ITEM value="E (r)\n"/>
+        <ITEM value="E\n"/>
         <ITEM value="STOP"/>
     </OUTPUTALPHABET>
     <STATE name="E" finalstate="false">
         <TRANSITION target="E">
-            <LABEL read="001" output="E"/>
-            <LABEL read="011" output="E"/>
-            <LABEL read="111" output="E"/>
+            <LABEL read="001" output="E\n"/>
+            <LABEL read="011" output="E\n"/>
+            <LABEL read="101" output="E\n"/>
+            <LABEL read="111" output="E\n"/>
         </TRANSITION>
         <TRANSITION target="B">
-            <LABEL read="010" output="B"/>
-            <LABEL read="110" output="B"/>
+            <LABEL read="010" output="B (h)\n"/>
+            <LABEL read="110" output="B (h)\n"/>
+        </TRANSITION>
+        <TRANSITION target="D">
+            <LABEL read="100" output="D (h)\n"/>
         </TRANSITION>
     </STATE>
-    <STATE name="B" finalstate="false"/>
-    <STATE name="D" finalstate="false"/>
+    <STATE name="B" finalstate="false">
+        <TRANSITION target="D">
+            <LABEL read="100" output="D (h)\n"/>
+        </TRANSITION>
+        <TRANSITION target="E">
+            <LABEL read="001" output="E (r)\n"/>
+            <LABEL read="101" output="E (r)\n"/>
+        </TRANSITION>
+        <TRANSITION target="B">
+            <LABEL read="010" output="B\n"/>
+            <LABEL read="011" output="B\n"/>
+            <LABEL read="110" output="B\n"/>
+            <LABEL read="111" output="B\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="D" finalstate="false">
+        <TRANSITION target="D">
+            <LABEL read="100" output="D\n"/>
+            <LABEL read="101" output="D\n"/>
+            <LABEL read="110" output="D\n"/>
+            <LABEL read="111" output="D\n"/>
+        </TRANSITION>
+        <TRANSITION target="B">
+            <LABEL read="010" output="B (r)\n"/>
+            <LABEL read="011" output="B (r)\n"/>
+        </TRANSITION>
+        <TRANSITION target="E">
+            <LABEL read="001" output="E (r)\n"/>
+        </TRANSITION>
+    </STATE>
     <INITIALSTATE value="E"/>
     <LAYOUT>
         <STATELAYOUT name="E">
             <LEFT value="487"/>
             <TOP value="398"/>
             <TRANSITIONLAYOUT target="E" drawvertical="true">
-                <LEFT value="390"/>
+                <LEFT value="343"/>
             </TRANSITIONLAYOUT>
-            <TRANSITIONLAYOUT target="B" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="B" drawvertical="true">
+                <LEFT value="-83"/>
+                <TOP value="1"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="D" drawvertical="true">
+                <LEFT value="-250"/>
+            </TRANSITIONLAYOUT>
         </STATELAYOUT>
         <STATELAYOUT name="B">
             <LEFT value="487"/>
             <TOP value="260"/>
+            <TRANSITIONLAYOUT target="D" drawvertical="true">
+                <LEFT value="-83"/>
+                <TOP value="1"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="E" drawvertical="true">
+                <LEFT value="83"/>
+                <TOP value="1"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="B" drawvertical="true">
+                <LEFT value="352"/>
+            </TRANSITIONLAYOUT>
         </STATELAYOUT>
         <STATELAYOUT name="D">
             <LEFT value="487"/>
             <TOP value="128"/>
+            <TRANSITIONLAYOUT target="D" drawvertical="true">
+                <LEFT value="359"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="B" drawvertical="true">
+                <LEFT value="83"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="E" drawvertical="true">
+                <LEFT value="-388"/>
+            </TRANSITIONLAYOUT>
         </STATELAYOUT>
         <NOTEPAD>
             {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset2 Symbol;}}
