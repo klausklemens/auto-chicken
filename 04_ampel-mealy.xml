@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="MEALY"/>
+    <ALPHABET>
+        <ITEM value="T"/>
+    </ALPHABET>
+    <OUTPUTALPHABET>
+        <ITEM value="GELB\n"/>
+        <ITEM value="GRÜN\n"/>
+        <ITEM value="ROT "/>
+    </OUTPUTALPHABET>
+    <STATE name="Gr" finalstate="false">
+        <TRANSITION target="Gl">
+            <LABEL read="T" output="GELB\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Gl" finalstate="false">
+        <TRANSITION target="Rt">
+            <LABEL read="T" output="ROT "/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Rt" finalstate="false">
+        <TRANSITION target="GlRt">
+            <LABEL read="T" output="GELB\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="GlRt" finalstate="false">
+        <TRANSITION target="Gr">
+            <LABEL read="T" output="GRÜN\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Start" finalstate="false">
+        <TRANSITION target="Gr">
+            <LABEL read="T" output="GRÜN\n"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="Start"/>
+    <LAYOUT>
+        <STATELAYOUT name="Gr">
+            <LEFT value="363"/>
+            <TOP value="358"/>
+            <RADIUS value="60"/>
+            <COLOR value="$00FF80"/>
+            <TRANSITIONLAYOUT target="Gl" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="Gl">
+            <LEFT value="363"/>
+            <TOP value="214"/>
+            <RADIUS value="60"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target="Rt" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="Rt">
+            <LEFT value="363"/>
+            <TOP value="63"/>
+            <RADIUS value="60"/>
+            <COLOR value="$0000FF"/>
+            <TRANSITIONLAYOUT target="GlRt" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="GlRt">
+            <LEFT value="424"/>
+            <TOP value="179"/>
+            <RADIUS value="60"/>
+            <COLOR value="$0080FF"/>
+            <TRANSITIONLAYOUT target="Gr" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="Start">
+            <LEFT value="193"/>
+            <TOP value="358"/>
+            <RADIUS value="60"/>
+            <COLOR value="$00FF80"/>
+            <TRANSITIONLAYOUT target="Gr" drawvertical="true"/>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20 
+\par }
+
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>

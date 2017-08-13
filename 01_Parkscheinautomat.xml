@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="MEALY"/>
+    <ALPHABET>
+        <ITEM value="0.5€"/>
+        <ITEM value="1€"/>
+        <ITEM value="2€"/>
+        <ITEM value="abort"/>
+        <ITEM value="print"/>
+    </ALPHABET>
+    <OUTPUTALPHABET>
+        <ITEM value="-\n"/>
+        <ITEM value="0.5€\n"/>
+        <ITEM value="1.0€\n"/>
+        <ITEM value="1.5€\n"/>
+        <ITEM value="2.0€\n"/>
+        <ITEM value="2.5€\n"/>
+        <ITEM value="3.0€\n"/>
+        <ITEM value="3.5€\n"/>
+        <ITEM value="4.0€\n"/>
+        <ITEM value="4.5€\n"/>
+        <ITEM value="PARKSCHEIN + 0.5€\n"/>
+        <ITEM value="PARKSCHEIN + 1.0€\n"/>
+        <ITEM value="PARKSCHEIN + 1.5€\n"/>
+        <ITEM value="PARKSCHEIN\n"/>
+    </OUTPUTALPHABET>
+    <STATE name="0.0€" finalstate="false">
+        <TRANSITION target="0.5€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="1.0€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.0€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="-\n"/>
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="0.5€" finalstate="false">
+        <TRANSITION target="1.0€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="1.5€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.5€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.5€">
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="0.5€\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="1.0€" finalstate="false">
+        <TRANSITION target="1.5€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.0€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.0€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="1.0€">
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="1.0€\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="1.5€" finalstate="false">
+        <TRANSITION target="2.0€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.5€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.5€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="1.5€">
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="1.5€\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="2.0€" finalstate="false">
+        <TRANSITION target="2.5€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.0€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="4.0€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.0€">
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="2.0€\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="2.5€" finalstate="false">
+        <TRANSITION target="3.0€">
+            <LABEL read="0.5€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.5€">
+            <LABEL read="1€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="4.5€">
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="2.5€">
+            <LABEL read="print" output="-\n"/>
+        </TRANSITION>
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="2.5€\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="3.0€" finalstate="false">
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="3.0€\n"/>
+            <LABEL read="print" output="PARKSCHEIN\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.0€">
+            <LABEL read="0.5€" output="-\n"/>
+            <LABEL read="1€" output="-\n"/>
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="3.5€" finalstate="false">
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="3.5€\n"/>
+            <LABEL read="print" output="PARKSCHEIN + 0.5€\n"/>
+        </TRANSITION>
+        <TRANSITION target="3.5€">
+            <LABEL read="0.5€" output="-\n"/>
+            <LABEL read="1€" output="-\n"/>
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="4.0€" finalstate="false">
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="4.0€\n"/>
+            <LABEL read="print" output="PARKSCHEIN + 1.0€\n"/>
+        </TRANSITION>
+        <TRANSITION target="4.0€">
+            <LABEL read="0.5€" output="-\n"/>
+            <LABEL read="1€" output="-\n"/>
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="4.5€" finalstate="false">
+        <TRANSITION target="0.0€">
+            <LABEL read="abort" output="4.5€\n"/>
+            <LABEL read="print" output="PARKSCHEIN + 1.5€\n"/>
+        </TRANSITION>
+        <TRANSITION target="4.5€">
+            <LABEL read="0.5€" output="-\n"/>
+            <LABEL read="1€" output="-\n"/>
+            <LABEL read="2€" output="-\n"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="0.0€"/>
+    <LAYOUT>
+        <STATELAYOUT name="0.0€">
+            <LEFT value="422"/>
+            <TOP value="110"/>
+            <TRANSITIONLAYOUT target="0.5€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="1.0€" drawvertical="true">
+                <LEFT value="-83"/>
+                <TOP value="64"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2.0€" drawvertical="true">
+                <LEFT value="660"/>
+                <TOP value="-228"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="0.5€">
+            <LEFT value="534"/>
+            <TOP value="110"/>
+            <TRANSITIONLAYOUT target="1.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="1.5€" drawvertical="true">
+                <LEFT value="-85"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2.5€" drawvertical="true">
+                <LEFT value="756"/>
+                <TOP value="228"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.5€" drawvertical="true">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="1.0€">
+            <LEFT value="612"/>
+            <TOP value="169"/>
+            <TRANSITIONLAYOUT target="1.5€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="2.0€" drawvertical="true">
+                <LEFT value="-96"/>
+                <TOP value="-28"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="3.0€" drawvertical="true">
+                <LEFT value="239"/>
+                <TOP value="589"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="1.0€" drawvertical="true">
+                <LEFT value="176"/>
+                <TOP value="-20"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="1.5€">
+            <LEFT value="612"/>
+            <TOP value="272"/>
+            <TRANSITIONLAYOUT target="2.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="2.5€" drawvertical="true">
+                <TOP value="-67"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="3.5€" drawvertical="true">
+                <LEFT value="-91"/>
+                <TOP value="314"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="1.5€" drawvertical="true">
+                <LEFT value="167"/>
+                <TOP value="18"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="2.0€">
+            <LEFT value="534"/>
+            <TOP value="335"/>
+            <TRANSITIONLAYOUT target="2.5€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="3.0€" drawvertical="true">
+                <LEFT value="20"/>
+                <TOP value="-109"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="4.0€" drawvertical="true">
+                <LEFT value="-192"/>
+                <TOP value="205"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2.0€" drawvertical="true">
+                <LEFT value="38"/>
+                <TOP value="150"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="2.5€">
+            <LEFT value="422"/>
+            <TOP value="335"/>
+            <TRANSITIONLAYOUT target="3.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="3.5€" drawvertical="true">
+                <LEFT value="83"/>
+                <TOP value="-45"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="4.5€" drawvertical="true">
+                <LEFT value="-214"/>
+                <TOP value="123"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2.5€" drawvertical="true">
+                <LEFT value="-47"/>
+                <TOP value="63"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="3.0€">
+            <LEFT value="359"/>
+            <TOP value="272"/>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="3.0€" drawvertical="true">
+                <LEFT value="-542"/>
+                <TOP value="74"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="3.5€">
+            <LEFT value="330"/>
+            <TOP value="241"/>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true">
+                <LEFT value="-13"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="3.5€" drawvertical="true">
+                <LEFT value="-526"/>
+                <TOP value="38"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="4.0€">
+            <LEFT value="297"/>
+            <TOP value="213"/>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="4.0€" drawvertical="true">
+                <LEFT value="-446"/>
+                <TOP value="-13"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="4.5€">
+            <LEFT value="259"/>
+            <TOP value="186"/>
+            <TRANSITIONLAYOUT target="0.0€" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="4.5€" drawvertical="true">
+                <LEFT value="-346"/>
+                <TOP value="-69"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\deff0{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\lang1031\fs20 
+\par }
+
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>

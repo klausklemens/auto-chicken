@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="MOORE"/>
+    <ALPHABET>
+        <ITEM value="1€"/>
+        <ITEM value="2€"/>
+    </ALPHABET>
+    <OUTPUTALPHABET>
+        <ITEM value="nix\n"/>
+        <ITEM value="PARKSCHEIN+1€\n"/>
+        <ITEM value="PARKSCHEIN\n"/>
+    </OUTPUTALPHABET>
+    <STATE name="start" output="nix\n" finalstate="false">
+        <TRANSITION target="1€">
+            <LABEL read="1€"/>
+        </TRANSITION>
+        <TRANSITION target="2€">
+            <LABEL read="2€"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="0€" output="PARKSCHEIN\n" finalstate="false">
+        <TRANSITION target="1€">
+            <LABEL read="1€"/>
+        </TRANSITION>
+        <TRANSITION target="2€">
+            <LABEL read="2€"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="1€" output="nix\n" finalstate="false">
+        <TRANSITION target="0€">
+            <LABEL read="2€"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="2€" output="nix\n" finalstate="false">
+        <TRANSITION target="0€">
+            <LABEL read="1€"/>
+        </TRANSITION>
+        <TRANSITION target="ret">
+            <LABEL read="2€"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="ret" output="PARKSCHEIN+1€\n" finalstate="false">
+        <TRANSITION target="1€">
+            <LABEL read="1€"/>
+        </TRANSITION>
+        <TRANSITION target="2€">
+            <LABEL read="2€"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="start"/>
+    <LAYOUT>
+        <STATELAYOUT name="start">
+            <LEFT value="225"/>
+            <TOP value="145"/>
+            <TRANSITIONLAYOUT target="1€" drawvertical="false">
+                <LEFT value="-20"/>
+                <TOP value="-55"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2€" drawvertical="false">
+                <LEFT value="-33"/>
+                <TOP value="-118"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="0€">
+            <LEFT value="225"/>
+            <TOP value="250"/>
+            <TRANSITIONLAYOUT target="1€" drawvertical="false">
+                <TOP value="-93"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2€" drawvertical="false">
+                <LEFT value="-22"/>
+                <TOP value="-167"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="1€">
+            <LEFT value="351"/>
+            <TOP value="250"/>
+            <TRANSITIONLAYOUT target="0€" drawvertical="false">
+                <LEFT value="-15"/>
+                <TOP value="69"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="2€">
+            <LEFT value="502"/>
+            <TOP value="250"/>
+            <TRANSITIONLAYOUT target="0€" drawvertical="false">
+                <LEFT value="-13"/>
+                <TOP value="165"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="ret" drawvertical="false">
+                <LEFT value="203"/>
+                <TOP value="277"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="ret">
+            <LEFT value="225"/>
+            <TOP value="344"/>
+            <TRANSITIONLAYOUT target="1€" drawvertical="false">
+                <LEFT value="-56"/>
+                <TOP value="42"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="2€" drawvertical="false">
+                <LEFT value="65"/>
+                <TOP value="123"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20 
+\par }
+
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>

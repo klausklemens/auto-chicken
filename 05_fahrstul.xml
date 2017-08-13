@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="MEALY"/>
+    <ALPHABET>
+        <ITEM value="001"/>
+        <ITEM value="010"/>
+        <ITEM value="011"/>
+        <ITEM value="100"/>
+        <ITEM value="101"/>
+        <ITEM value="110"/>
+        <ITEM value="111"/>
+    </ALPHABET>
+    <OUTPUTALPHABET>
+        <ITEM value="B"/>
+        <ITEM value="B (r)"/>
+        <ITEM value="D"/>
+        <ITEM value="D (h)"/>
+        <ITEM value="D (r)"/>
+        <ITEM value="E"/>
+        <ITEM value="E (h)"/>
+        <ITEM value="STOP"/>
+    </OUTPUTALPHABET>
+    <STATE name="E" finalstate="false">
+        <TRANSITION target="E">
+            <LABEL read="001" output="E"/>
+            <LABEL read="011" output="E"/>
+            <LABEL read="111" output="E"/>
+        </TRANSITION>
+        <TRANSITION target="B">
+            <LABEL read="010" output="B"/>
+            <LABEL read="110" output="B"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="B" finalstate="false"/>
+    <STATE name="D" finalstate="false"/>
+    <INITIALSTATE value="E"/>
+    <LAYOUT>
+        <STATELAYOUT name="E">
+            <LEFT value="487"/>
+            <TOP value="398"/>
+            <TRANSITIONLAYOUT target="E" drawvertical="true">
+                <LEFT value="390"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="B" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="B">
+            <LEFT value="487"/>
+            <TOP value="260"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="D">
+            <LEFT value="487"/>
+            <TOP value="128"/>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}{\f1\fnil\fcharset2 Symbol;}}
+\viewkind4\uc1\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-200\li200\qc\ul\b\i\fs20 Hallo\ulnone\b0\i0 
+\par }
+
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
