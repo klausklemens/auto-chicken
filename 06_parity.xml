@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="MEALY"/>
+    <ALPHABET>
+        <ITEM value="0"/>
+        <ITEM value="1"/>
+    </ALPHABET>
+    <OUTPUTALPHABET>
+        <ITEM value=" -&gt; 0\n"/>
+        <ITEM value=" -&gt; 1\n"/>
+        <ITEM value="0"/>
+        <ITEM value="1"/>
+    </OUTPUTALPHABET>
+    <STATE name="0" finalstate="false">
+        <TRANSITION target="E1">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+        <TRANSITION target="O1">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E1" finalstate="false">
+        <TRANSITION target="O2">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="E2">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E2" finalstate="false">
+        <TRANSITION target="O3">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="E3">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E3" finalstate="false">
+        <TRANSITION target="O4">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="E4">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E4" finalstate="false">
+        <TRANSITION target="O5">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="E5">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E5" finalstate="false">
+        <TRANSITION target="O6">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="E6">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O6" finalstate="false">
+        <TRANSITION target="0">
+            <LABEL read="0" output=" -&gt; 1\n"/>
+            <LABEL read="1" output=" -&gt; 0\n"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O1" finalstate="false">
+        <TRANSITION target="E2">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="O2">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O2" finalstate="false">
+        <TRANSITION target="E3">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="O3">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O3" finalstate="false">
+        <TRANSITION target="E4">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="O4">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O4" finalstate="false">
+        <TRANSITION target="E5">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="O5">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="O5" finalstate="false">
+        <TRANSITION target="E6">
+            <LABEL read="1" output="1"/>
+        </TRANSITION>
+        <TRANSITION target="O6">
+            <LABEL read="0" output="0"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E6" finalstate="false">
+        <TRANSITION target="0">
+            <LABEL read="0" output=" -&gt; 0\n"/>
+            <LABEL read="1" output=" -&gt; 1\n"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="0"/>
+    <LAYOUT>
+        <STATELAYOUT name="0">
+            <LEFT value="192"/>
+            <TOP value="215"/>
+            <TRANSITIONLAYOUT target="E1" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O1" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E1">
+            <LEFT value="309"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="O2" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="E2" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E2">
+            <LEFT value="446"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="O3" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="E3" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E3">
+            <LEFT value="567"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="O4" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="E4" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E4">
+            <LEFT value="689"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="O5" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="E5" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E5">
+            <LEFT value="819"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="O6" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="E6" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="O6">
+            <LEFT value="967"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="0" drawvertical="true">
+                <LEFT value="-301"/>
+                <TOP value="154"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="O1">
+            <LEFT value="309"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="E2" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O2" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="O2">
+            <LEFT value="446"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="E3" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O3" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="O3">
+            <LEFT value="567"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="E4" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O4" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="O4">
+            <LEFT value="689"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="E5" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O5" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="O5">
+            <LEFT value="819"/>
+            <TOP value="263"/>
+            <TRANSITIONLAYOUT target="E6" drawvertical="true"/>
+            <TRANSITIONLAYOUT target="O6" drawvertical="true"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="E6">
+            <LEFT value="967"/>
+            <TOP value="167"/>
+            <TRANSITIONLAYOUT target="0" drawvertical="true">
+                <LEFT value="-308"/>
+                <TOP value="-149"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fnil\fcharset0 Arial;}}
+\viewkind4\uc1\pard\fs20 
+\par }
+
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
