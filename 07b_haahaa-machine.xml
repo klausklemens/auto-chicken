@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="a"/>
+        <ITEM value="h"/>
+    </ALPHABET>
+    <STATE name="q_0" finalstate="false">
+        <TRANSITION target="q_1">
+            <LABEL read="h"/>
+        </TRANSITION>
+        <TRANSITION target="q_0">
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="q_1" finalstate="false">
+        <TRANSITION target="q_2">
+            <LABEL read="a"/>
+        </TRANSITION>
+        <TRANSITION target="q_1">
+            <LABEL read="h"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="q_2" finalstate="true">
+        <TRANSITION target="q_1">
+            <LABEL read="h"/>
+        </TRANSITION>
+        <TRANSITION target="q_2">
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="q_0"/>
+    <LAYOUT>
+        <STATELAYOUT name="q_0">
+            <LEFT value="237"/>
+            <TOP value="213"/>
+            <TRANSITIONLAYOUT target="q_1" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="q_0" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_1">
+            <LEFT value="422"/>
+            <TOP value="213"/>
+            <TRANSITIONLAYOUT target="q_2" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="-50"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="q_1" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_2">
+            <LEFT value="589"/>
+            <TOP value="213"/>
+            <TRANSITIONLAYOUT target="q_1" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="50"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="q_2" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
