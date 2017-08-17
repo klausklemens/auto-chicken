@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="("/>
+        <ITEM value=")"/>
+        <ITEM value="-"/>
+        <ITEM value="/"/>
+        <ITEM value=":"/>
+        <ITEM value="a"/>
+    </ALPHABET>
+    <STATE name="a" finalstate="false">
+        <TRANSITION target=":">
+            <LABEL read=":"/>
+        </TRANSITION>
+        <TRANSITION target="a">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name=":" finalstate="false">
+        <TRANSITION target="-">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="a">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="-" finalstate="false">
+        <TRANSITION target=":-(">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target=":-)">
+            <LABEL read=")"/>
+        </TRANSITION>
+        <TRANSITION target=":-/">
+            <LABEL read="/"/>
+        </TRANSITION>
+        <TRANSITION target="a">
+            <LABEL read="-"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name=":-/" finalstate="true">
+        <TRANSITION target=":-/">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name=":-)" finalstate="true">
+        <TRANSITION target=":-)">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name=":-(" finalstate="true">
+        <TRANSITION target=":-(">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="4" finalstate="true">
+        <TRANSITION target="4">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="5" finalstate="true">
+        <TRANSITION target="5">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="6" finalstate="true">
+        <TRANSITION target="6">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="7" finalstate="true">
+        <TRANSITION target="7">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="8" finalstate="true">
+        <TRANSITION target="8">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="9" finalstate="true">
+        <TRANSITION target="9">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="10" finalstate="true">
+        <TRANSITION target="10">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="-"/>
+            <LABEL read="/"/>
+            <LABEL read=":"/>
+            <LABEL read="a"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="a"/>
+    <LAYOUT>
+        <STATELAYOUT name="a">
+            <LEFT value="194"/>
+            <TOP value="196"/>
+            <TRANSITIONLAYOUT target=":" drawvertical="false">
+                <TOP value="-56"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="a" drawvertical="false">
+                <TOP value="-120"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name=":">
+            <LEFT value="299"/>
+            <TOP value="196"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target="-" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="a" drawvertical="false">
+                <TOP value="56"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="-">
+            <LEFT value="407"/>
+            <TOP value="196"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target=":-(" drawvertical="false"/>
+            <TRANSITIONLAYOUT target=":-)" drawvertical="false"/>
+            <TRANSITIONLAYOUT target=":-/" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="a" drawvertical="false">
+                <TOP value="132"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name=":-/">
+            <LEFT value="526"/>
+            <TOP value="196"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target=":-/" drawvertical="false">
+                <LEFT value="116"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name=":-)">
+            <LEFT value="526"/>
+            <TOP value="286"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target=":-)" drawvertical="false">
+                <LEFT value="120"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name=":-(">
+            <LEFT value="526"/>
+            <TOP value="107"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target=":-(" drawvertical="false">
+                <LEFT value="112"/>
+                <PENCOLOR value="$C0C0C0"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="4">
+            <LEFT value="469"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="4" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="5">
+            <LEFT value="365"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="5" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="6">
+            <LEFT value="254"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="6" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="7">
+            <LEFT value="167"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="7" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="8">
+            <LEFT value="109"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="8" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="9">
+            <LEFT value="51"/>
+            <TOP value="78"/>
+            <TRANSITIONLAYOUT target="9" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="10">
+            <LEFT value="51"/>
+            <TOP value="183"/>
+            <TRANSITIONLAYOUT target="10" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
