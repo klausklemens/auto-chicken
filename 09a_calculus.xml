@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="+"/>
+        <ITEM value="-"/>
+        <ITEM value="x"/>
+    </ALPHABET>
+    <STATE name="x" finalstate="true">
+        <TRANSITION target="+">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target=":(">
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="-" finalstate="true">
+        <TRANSITION target="x">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="+">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target=":(">
+            <LABEL read="+"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="+" finalstate="false">
+        <TRANSITION target="x">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target=":(">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name=":(" finalstate="false">
+        <TRANSITION target=":(">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="-"/>
+    <LAYOUT>
+        <STATELAYOUT name="x">
+            <LEFT value="294"/>
+            <TOP value="177"/>
+            <COLOR value="$FFFF00"/>
+            <TRANSITIONLAYOUT target="+" drawvertical="false">
+                <TOP value="50"/>
+                <PENCOLOR value="$FFFF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target=":(" drawvertical="false">
+                <PENCOLOR value="$0080FF"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="-">
+            <LEFT value="156"/>
+            <TOP value="97"/>
+            <COLOR value="$00FF00"/>
+            <TRANSITIONLAYOUT target="x" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="+" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target=":(" drawvertical="false">
+                <LEFT value="-181"/>
+                <TOP value="22"/>
+                <PENCOLOR value="$0080FF"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="+">
+            <LEFT value="156"/>
+            <TOP value="177"/>
+            <COLOR value="$FFFF00"/>
+            <TRANSITIONLAYOUT target="x" drawvertical="false">
+                <TOP value="-50"/>
+                <PENCOLOR value="$FFFF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target=":(" drawvertical="false">
+                <PENCOLOR value="$0080FF"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name=":(">
+            <LEFT value="225"/>
+            <TOP value="280"/>
+            <COLOR value="$0080FF"/>
+            <TRANSITIONLAYOUT target=":(" drawvertical="false">
+                <TOP value="120"/>
+                <PENCOLOR value="$0080FF"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <SIMULATIONINPUT>
+            <INPUT value="x+x++-+-x-"/>
+        </SIMULATIONINPUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>

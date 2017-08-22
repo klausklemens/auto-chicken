@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="("/>
+        <ITEM value=")"/>
+        <ITEM value="+"/>
+        <ITEM value="-"/>
+        <ITEM value="x"/>
+    </ALPHABET>
+    <STATE name="x" finalstate="true">
+        <TRANSITION target="+">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="(">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read=")"/>
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="-" finalstate="true">
+        <TRANSITION target="x">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="+">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="(">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="+" finalstate="false">
+        <TRANSITION target="Trap">
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="(">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="x">
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="(" finalstate="false">
+        <TRANSITION target="(x)">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="(+)">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="((">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="(x)" finalstate="false">
+        <TRANSITION target="(+)">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="((">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="-">
+            <LABEL read=")"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="(+)" finalstate="false">
+        <TRANSITION target="(x)">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="((">
+            <LABEL read="("/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="((" finalstate="false">
+        <TRANSITION target="((x))">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="((+))">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="((x))" finalstate="false">
+        <TRANSITION target="((+))">
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="(">
+            <LABEL read=")"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="("/>
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="((+))" finalstate="false">
+        <TRANSITION target="((x))">
+            <LABEL read="x"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Trap" finalstate="false">
+        <TRANSITION target="Trap">
+            <LABEL read="("/>
+            <LABEL read=")"/>
+            <LABEL read="+"/>
+            <LABEL read="-"/>
+            <LABEL read="x"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="-"/>
+    <LAYOUT>
+        <STATELAYOUT name="x">
+            <LEFT value="70"/>
+            <TOP value="177"/>
+            <COLOR value="$FFFF00"/>
+            <TRANSITIONLAYOUT target="+" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="-50"/>
+                <PENCOLOR value="$FFFF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="(" drawvertical="false">
+                <LEFT value="-125"/>
+                <TOP value="-285"/>
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="x">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="-">
+            <LEFT value="124"/>
+            <TOP value="284"/>
+            <COLOR value="$00FF00"/>
+            <TRANSITIONLAYOUT target="x" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="+" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="(" drawvertical="false">
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="+">
+            <LEFT value="174"/>
+            <TOP value="177"/>
+            <COLOR value="$FFFF00"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="(" drawvertical="false">
+                <LEFT value="-38"/>
+                <TOP value="-112"/>
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="x" drawvertical="false">
+                <TOP value="50"/>
+                <PENCOLOR value="$FFFF00"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="(">
+            <LEFT value="359"/>
+            <TOP value="284"/>
+            <COLOR value="$00FF00"/>
+            <TRANSITIONLAYOUT target="(x)" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="(+)" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="((" drawvertical="false">
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="(x)">
+            <LEFT value="311"/>
+            <TOP value="177"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target="(+)" drawvertical="false">
+                <TOP value="-50"/>
+                <PENCOLOR value="$00FFFF"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="((" drawvertical="false">
+                <LEFT value="-107"/>
+                <TOP value="-288"/>
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="-" drawvertical="false">
+                <PENCOLOR value="$004080"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="x">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="(+)">
+            <LEFT value="405"/>
+            <TOP value="177"/>
+            <COLOR value="$00FFFF"/>
+            <TRANSITIONLAYOUT target="(x)" drawvertical="false">
+                <TOP value="50"/>
+                <PENCOLOR value="$00FFFF"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="((" drawvertical="false">
+                <LEFT value="-47"/>
+                <TOP value="-120"/>
+                <PENCOLOR value="$008000"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="((">
+            <LEFT value="577"/>
+            <TOP value="284"/>
+            <COLOR value="$00FF00"/>
+            <TRANSITIONLAYOUT target="((x))" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="((+))" drawvertical="false">
+                <PENCOLOR value="$00FF00"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="(">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="((x))">
+            <LEFT value="536"/>
+            <TOP value="177"/>
+            <COLOR value="$FF00FF"/>
+            <TRANSITIONLAYOUT target="((+))" drawvertical="false">
+                <TOP value="-50"/>
+                <PENCOLOR value="$FF00FF"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="(" drawvertical="false">
+                <PENCOLOR value="$004080"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="(">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="x">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="((+))">
+            <LEFT value="625"/>
+            <TOP value="177"/>
+            <COLOR value="$FF00FF"/>
+            <TRANSITIONLAYOUT target="((x))" drawvertical="false">
+                <TOP value="50"/>
+                <PENCOLOR value="$FF00FF"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="(">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="Trap">
+            <LEFT value="311"/>
+            <TOP value="412"/>
+            <COLOR value="$EEEEEE"/>
+            <PENCOLOR value="$C0C0C0"/>
+            <FONTCOLOR value="$666666"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <TOP value="-120"/>
+                <PENCOLOR value="$C0C0C0"/>
+                <FONTCOLOR value="$666666"/>
+                <LABELLAYOUT read="(">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read=")">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="+">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="x">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <SIMULATIONINPUT>
+            <INPUT value="x+x++-+-x-"/>
+        </SIMULATIONINPUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
