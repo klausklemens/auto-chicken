@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="-"/>
+        <ITEM value="K"/>
+        <ITEM value="W"/>
+        <ITEM value="Z"/>
+    </ALPHABET>
+    <STATE name="WZK" finalstate="false">
+        <TRANSITION target="z">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="WK" finalstate="false">
+        <TRANSITION target="wz">
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="zk">
+            <LABEL read="K"/>
+        </TRANSITION>
+        <TRANSITION target="z">
+            <LABEL read="-"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="wz" finalstate="false">
+        <TRANSITION target="WK">
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="ZK">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="WZ" finalstate="false">
+        <TRANSITION target="zk">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="wk">
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="wzk" finalstate="true">
+        <TRANSITION target="Z">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="zk" finalstate="false">
+        <TRANSITION target="WK">
+            <LABEL read="K"/>
+        </TRANSITION>
+        <TRANSITION target="WZ">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="ZK" finalstate="false">
+        <TRANSITION target="wk">
+            <LABEL read="K"/>
+        </TRANSITION>
+        <TRANSITION target="wz">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="wk" finalstate="false">
+        <TRANSITION target="WZ">
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="Z">
+            <LABEL read="-"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="ZK">
+            <LABEL read="K"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="k" finalstate="false">
+        <TRANSITION target="WZK">
+            <LABEL read="K"/>
+        </TRANSITION>
+        <TRANSITION target="WZ">
+            <LABEL read="-"/>
+            <LABEL read="W"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="W" finalstate="false">
+        <TRANSITION target="wzk">
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="zk">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="K" finalstate="false">
+        <TRANSITION target="wz">
+            <LABEL read="-"/>
+            <LABEL read="W"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="wzk">
+            <LABEL read="K"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Z" finalstate="false">
+        <TRANSITION target="wk">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+        <TRANSITION target="wzk">
+            <LABEL read="Z"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="w" finalstate="false">
+        <TRANSITION target="ZK">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="WZK">
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="z" finalstate="false">
+        <TRANSITION target="WZK">
+            <LABEL read="Z"/>
+        </TRANSITION>
+        <TRANSITION target="WK">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="W"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Trap" finalstate="false">
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="K"/>
+            <LABEL read="W"/>
+            <LABEL read="Z"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="WZK"/>
+    <LAYOUT>
+        <STATELAYOUT name="WZK">
+            <LEFT value="148"/>
+            <TOP value="46"/>
+            <TRANSITIONLAYOUT target="z" drawvertical="false">
+                <LEFT value="21"/>
+                <TOP value="-45"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="K">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="W">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="WK">
+            <LEFT value="148"/>
+            <TOP value="140"/>
+            <TRANSITIONLAYOUT target="wz" drawvertical="false">
+                <LEFT value="34"/>
+                <TOP value="-36"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="zk" drawvertical="false">
+                <LEFT value="21"/>
+                <TOP value="-45"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="z" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="-50"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="wz">
+            <LEFT value="341"/>
+            <TOP value="331"/>
+            <TRANSITIONLAYOUT target="WK" drawvertical="false">
+                <LEFT value="-36"/>
+                <TOP value="35"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="ZK" drawvertical="false">
+                <LEFT value="-36"/>
+                <TOP value="35"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="K">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="WZ">
+            <LEFT value="194"/>
+            <TOP value="92"/>
+            <TRANSITIONLAYOUT target="zk" drawvertical="false">
+                <LEFT value="34"/>
+                <TOP value="-37"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="wk" drawvertical="false">
+                <LEFT value="35"/>
+                <TOP value="-36"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="K">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="wzk">
+            <LEFT value="382"/>
+            <TOP value="377"/>
+            <TRANSITIONLAYOUT target="Z" drawvertical="false">
+                <LEFT value="-23"/>
+                <TOP value="44"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="K">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="W">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="zk">
+            <LEFT value="341"/>
+            <TOP value="233"/>
+            <TRANSITIONLAYOUT target="WK" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="WZ" drawvertical="false">
+                <LEFT value="-35"/>
+                <TOP value="35"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="W">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="ZK">
+            <LEFT value="194"/>
+            <TOP value="185"/>
+            <TRANSITIONLAYOUT target="wk" drawvertical="false">
+                <LEFT value="22"/>
+                <TOP value="-45"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="wz" drawvertical="false">
+                <LEFT value="35"/>
+                <TOP value="-36"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="W">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="wk">
+            <LEFT value="382"/>
+            <TOP value="282"/>
+            <TRANSITIONLAYOUT target="WZ" drawvertical="false">
+                <LEFT value="-36"/>
+                <TOP value="34"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Z" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="50"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="ZK" drawvertical="false">
+                <LEFT value="-24"/>
+                <TOP value="44"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="k">
+            <LEFT value="382"/>
+            <TOP value="92"/>
+            <TRANSITIONLAYOUT target="WZK" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="WZ" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="W">
+            <LEFT value="148"/>
+            <TOP value="233"/>
+            <TRANSITIONLAYOUT target="wzk" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="zk" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="K">
+            <LEFT value="148"/>
+            <TOP value="331"/>
+            <TRANSITIONLAYOUT target="wz" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="wzk" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="Z">
+            <LEFT value="194"/>
+            <TOP value="282"/>
+            <TRANSITIONLAYOUT target="wk" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="-50"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="wzk" drawvertical="false">
+                <LEFT value="22"/>
+                <TOP value="-45"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="w">
+            <LEFT value="382"/>
+            <TOP value="185"/>
+            <TRANSITIONLAYOUT target="ZK" drawvertical="false">
+                <LEFT value="1"/>
+                <TOP value="50"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="WZK" drawvertical="false"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="z">
+            <LEFT value="341"/>
+            <TOP value="140"/>
+            <TRANSITIONLAYOUT target="WZK" drawvertical="false">
+                <LEFT value="-23"/>
+                <TOP value="45"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="WK" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="50"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="Trap">
+            <LEFT value="757"/>
+            <TOP value="233"/>
+            <COLOR value="$EEEEEE"/>
+            <PENCOLOR value="$C0C0C0"/>
+            <FONTCOLOR value="$666666"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <TOP value="-120"/>
+                <PENCOLOR value="$C0C0C0"/>
+                <FONTCOLOR value="$666666"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="K">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="W">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Z">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
