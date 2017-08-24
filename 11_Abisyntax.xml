@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="-"/>
+        <ITEM value="2"/>
+        <ITEM value="4"/>
+        <ITEM value="AA"/>
+        <ITEM value="aa"/>
+        <ITEM value="Abi"/>
+        <ITEM value="d"/>
+        <ITEM value="dd"/>
+        <ITEM value="E"/>
+        <ITEM value="G"/>
+        <ITEM value="nn3"/>
+    </ALPHABET>
+    <STATE name=" " finalstate="false">
+        <TRANSITION target="Abi">
+            <LABEL read="Abi"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Abi" finalstate="false">
+        <TRANSITION target="*year">
+            <LABEL read="dd"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="E" finalstate="false">
+        <TRANSITION target="*std">
+            <LABEL read="d"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*year" finalstate="false">
+        <TRANSITION target="--">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="--" finalstate="false">
+        <TRANSITION target="E">
+            <LABEL read="E"/>
+        </TRANSITION>
+        <TRANSITION target="G">
+            <LABEL read="G"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*std" finalstate="false">
+        <TRANSITION target="-">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="-" finalstate="false">
+        <TRANSITION target="*sbj">
+            <LABEL read="AA"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*sbj" finalstate="false">
+        <TRANSITION target="*num">
+            <LABEL read="d"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*num" finalstate="false">
+        <TRANSITION target="*tea">
+            <LABEL read="nn3"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*tea" finalstate="true">
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="G" finalstate="false">
+        <TRANSITION target="*std*">
+            <LABEL read="d"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*std*" finalstate="false">
+        <TRANSITION target="---">
+            <LABEL read="-"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="---" finalstate="false">
+        <TRANSITION target="*sbj*">
+            <LABEL read="aa"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="*sbj*" finalstate="false">
+        <TRANSITION target="*num">
+            <LABEL read="d"/>
+        </TRANSITION>
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="Trap" finalstate="false">
+        <TRANSITION target="Trap">
+            <LABEL read="-"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="AA"/>
+            <LABEL read="Abi"/>
+            <LABEL read="E"/>
+            <LABEL read="G"/>
+            <LABEL read="aa"/>
+            <LABEL read="d"/>
+            <LABEL read="dd"/>
+            <LABEL read="nn3"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value=" "/>
+    <LAYOUT>
+        <STATELAYOUT name=" ">
+            <LEFT value="106"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="Abi" drawvertical="false">
+                <TOP value="-94"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="Abi">
+            <LEFT value="145"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="*year" drawvertical="false">
+                <TOP value="-96"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="E">
+            <LEFT value="265"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="*std" drawvertical="false">
+                <TOP value="-98"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*year">
+            <LEFT value="185"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="--" drawvertical="false">
+                <TOP value="-96"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="--">
+            <LEFT value="227"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="E" drawvertical="false">
+                <TOP value="-96"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="G" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*std">
+            <LEFT value="301"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="-" drawvertical="false">
+                <TOP value="-98"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="-">
+            <LEFT value="340"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="*sbj" drawvertical="false">
+                <TOP value="-100"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*sbj">
+            <LEFT value="379"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="*num" drawvertical="false">
+                <TOP value="-98"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*num">
+            <LEFT value="413"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="*tea" drawvertical="false">
+                <TOP value="-99"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*tea">
+            <LEFT value="449"/>
+            <TOP value="53"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="G">
+            <LEFT value="265"/>
+            <TOP value="105"/>
+            <TRANSITIONLAYOUT target="*std*" drawvertical="false">
+                <TOP value="87"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*std*">
+            <LEFT value="301"/>
+            <TOP value="105"/>
+            <TRANSITIONLAYOUT target="---" drawvertical="false">
+                <TOP value="83"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="---">
+            <LEFT value="340"/>
+            <TOP value="105"/>
+            <TRANSITIONLAYOUT target="*sbj*" drawvertical="false">
+                <TOP value="85"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="*sbj*">
+            <LEFT value="379"/>
+            <TOP value="105"/>
+            <TRANSITIONLAYOUT target="*num" drawvertical="false"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <PENCOLOR value="$C0C0C0"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="Trap">
+            <LEFT value="301"/>
+            <TOP value="358"/>
+            <COLOR value="$EEEEEE"/>
+            <PENCOLOR value="$C0C0C0"/>
+            <FONTCOLOR value="$666666"/>
+            <TRANSITIONLAYOUT target="Trap" drawvertical="false">
+                <TOP value="-120"/>
+                <PENCOLOR value="$C0C0C0"/>
+                <FONTCOLOR value="$666666"/>
+                <LABELLAYOUT read="-">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="2">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="4">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="AA">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="Abi">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="E">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="G">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="aa">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="d">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="dd">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+                <LABELLAYOUT read="nn3">
+                    <FONTCOLOR value="$666666"/>
+                </LABELLAYOUT>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0&#13;
+\par}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
