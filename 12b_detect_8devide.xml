@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="0"/>
+        <ITEM value="1"/>
+        <ITEM value="2"/>
+        <ITEM value="3"/>
+        <ITEM value="4"/>
+        <ITEM value="5"/>
+        <ITEM value="6"/>
+        <ITEM value="7"/>
+        <ITEM value="8"/>
+        <ITEM value="9"/>
+    </ALPHABET>
+    <STATE name="q0" finalstate="false"/>
+    <STATE name="q_1" finalstate="false"/>
+    <STATE name="q_2" finalstate="false"/>
+    <STATE name="q_3" finalstate="false"/>
+    <STATE name="q_4" finalstate="false"/>
+    <STATE name="q_0" finalstate="false"/>
+    <STATE name="q_5" finalstate="false"/>
+    <STATE name="q_6" finalstate="false"/>
+    <STATE name="q_7" finalstate="false"/>
+    <STATE name="q_8" finalstate="false"/>
+    <STATE name="q_9" finalstate="false"/>
+    <STATE name="q_10" finalstate="false"/>
+    <STATE name="q_11" finalstate="false"/>
+    <STATE name="q_12" finalstate="false"/>
+    <STATE name="q_13" finalstate="false"/>
+    <STATE name="q_14" finalstate="false"/>
+    <STATE name="q_15" finalstate="false"/>
+    <STATE name="q_16" finalstate="false"/>
+    <STATE name="q_17" finalstate="false"/>
+    <STATE name="q_18" finalstate="false"/>
+    <STATE name="q_19" finalstate="false"/>
+    <STATE name="q_20" finalstate="false"/>
+    <STATE name="q_21" finalstate="false"/>
+    <STATE name="q_22" finalstate="false"/>
+    <STATE name="q_23" finalstate="false"/>
+    <STATE name="q_24" finalstate="false"/>
+    <INITIALSTATE value="q0"/>
+    <LAYOUT>
+        <STATELAYOUT name="q0">
+            <LEFT value="178"/>
+            <TOP value="201"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_1">
+            <LEFT value="241"/>
+            <TOP value="154"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_2">
+            <LEFT value="248"/>
+            <TOP value="248"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_3">
+            <LEFT value="310"/>
+            <TOP value="213"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_4">
+            <LEFT value="376"/>
+            <TOP value="163"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_0">
+            <LEFT value="353"/>
+            <TOP value="115"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_5">
+            <LEFT value="413"/>
+            <TOP value="140"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_6">
+            <LEFT value="401"/>
+            <TOP value="205"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_7">
+            <LEFT value="362"/>
+            <TOP value="189"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_8">
+            <LEFT value="319"/>
+            <TOP value="148"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_9">
+            <LEFT value="266"/>
+            <TOP value="197"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_10">
+            <LEFT value="224"/>
+            <TOP value="201"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_11">
+            <LEFT value="205"/>
+            <TOP value="293"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_12">
+            <LEFT value="293"/>
+            <TOP value="331"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_13">
+            <LEFT value="382"/>
+            <TOP value="277"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_14">
+            <LEFT value="408"/>
+            <TOP value="324"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_15">
+            <LEFT value="353"/>
+            <TOP value="319"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_16">
+            <LEFT value="314"/>
+            <TOP value="252"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_17">
+            <LEFT value="248"/>
+            <TOP value="319"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_18">
+            <LEFT value="293"/>
+            <TOP value="389"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_19">
+            <LEFT value="433"/>
+            <TOP value="373"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_20">
+            <LEFT value="493"/>
+            <TOP value="348"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_21">
+            <LEFT value="519"/>
+            <TOP value="294"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_22">
+            <LEFT value="512"/>
+            <TOP value="258"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_23">
+            <LEFT value="487"/>
+            <TOP value="227"/>
+        </STATELAYOUT>
+        <STATELAYOUT name="q_24">
+            <LEFT value="452"/>
+            <TOP value="256"/>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone for ((i=1;i&lt;=125;i++));}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone do}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone     echo $(($i * 8));}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone done}}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>

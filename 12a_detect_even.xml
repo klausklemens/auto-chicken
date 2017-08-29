@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AUTOMATON>
+    <TYPE value="DEA"/>
+    <ALPHABET>
+        <ITEM value="0"/>
+        <ITEM value="1"/>
+        <ITEM value="2"/>
+        <ITEM value="3"/>
+        <ITEM value="4"/>
+        <ITEM value="5"/>
+        <ITEM value="6"/>
+        <ITEM value="7"/>
+        <ITEM value="8"/>
+        <ITEM value="9"/>
+    </ALPHABET>
+    <STATE name="even" finalstate="false">
+        <TRANSITION target="odd">
+            <LABEL read="1"/>
+            <LABEL read="3"/>
+            <LABEL read="5"/>
+            <LABEL read="7"/>
+            <LABEL read="9"/>
+        </TRANSITION>
+        <TRANSITION target="even">
+            <LABEL read="0"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="6"/>
+            <LABEL read="8"/>
+        </TRANSITION>
+    </STATE>
+    <STATE name="odd" finalstate="false">
+        <TRANSITION target="even">
+            <LABEL read="0"/>
+            <LABEL read="2"/>
+            <LABEL read="4"/>
+            <LABEL read="6"/>
+            <LABEL read="8"/>
+        </TRANSITION>
+        <TRANSITION target="odd">
+            <LABEL read="1"/>
+            <LABEL read="3"/>
+            <LABEL read="5"/>
+            <LABEL read="7"/>
+            <LABEL read="9"/>
+        </TRANSITION>
+    </STATE>
+    <INITIALSTATE value="even"/>
+    <LAYOUT>
+        <STATELAYOUT name="even">
+            <LEFT value="157"/>
+            <TOP value="164"/>
+            <TRANSITIONLAYOUT target="odd" drawvertical="false">
+                <LEFT value="-1"/>
+                <TOP value="-137"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="even" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <STATELAYOUT name="odd">
+            <LEFT value="330"/>
+            <TOP value="164"/>
+            <TRANSITIONLAYOUT target="even" drawvertical="false">
+                <TOP value="137"/>
+            </TRANSITIONLAYOUT>
+            <TRANSITIONLAYOUT target="odd" drawvertical="false">
+                <TOP value="-120"/>
+            </TRANSITIONLAYOUT>
+        </STATELAYOUT>
+        <NOTEPAD>
+            {\rtf1\ansi\ansicpg1252\uc1\deff0\deflang1033\deflangfe1033{\fonttbl{\f0\fcharset0 Arial;}}&#13;
+\f0{\colortbl;}{\*\generator Wine Riched20 2.0.????;}\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone for ((i=1;i&lt;=125;i++));}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone do}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone     echo $(($i * 8));}&#13;
+\par\pard\sl-240\slmult1\li0\fi0\ri0\sa0\sb0\s-1\cfpat0\cbpat0{\fs18\ulnone done}}
+        </NOTEPAD>
+    </LAYOUT>
+</AUTOMATON>
